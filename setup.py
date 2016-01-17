@@ -24,7 +24,7 @@ setup_args = dict(
         'A nose plugin for monkey patching modules for use with gevent.'
     ),
     url='https://github.com/kevinfrommelt/nose-gevent-monkey',
-    packages=find_packages(),
+    py_modules=['nose_gevent_monkey'],
     install_requires=get_requirements('requirements.txt'),
     entry_points={
         'nose.plugins.0.10': [
