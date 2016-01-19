@@ -1,7 +1,8 @@
 *.py[cod]
 *.egg-info
-dist
+build
 cover
 .coverage
 coverage.xml
+dist
 nosetests.xml
