@@ -1,19 +1,5 @@
 from setuptools import find_packages, setup
 
-from pip.req import parse_requirements
-
-
-def get_requirements(filename):
-    try:
-        from pip.download import PipSession
-        session = PipSession()
-    except ImportError:
-        session = None
-
-    reqs = parse_requirements(filename, session=session)
-
-    return [str(r.req) for r in reqs]
-
 
 setup_args = dict(
     name='nose-gevent-monkey',
@@ -25,7 +11,7 @@ setup_args = dict(
     ),
     url='https://github.com/kevinfrommelt/nose-gevent-monkey',
     py_modules=['nose_gevent_monkey'],
-    install_requires=get_requirements('requirements.txt'),
+    install_requires=["nose"],
     entry_points={
         'nose.plugins.0.10': [
             'nose-gevent-monkey=nose_gevent_monkey:GeventMonkey',
